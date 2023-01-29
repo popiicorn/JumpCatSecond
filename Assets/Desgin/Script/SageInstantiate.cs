@@ -19,7 +19,7 @@ public class SageInstantiate : MonoBehaviour
         clearpoint = ES3.Load("Clearkey", clearpoint);
 
         // メニュー画面表示用
-        textClearPoint.text = "" + clearpoint;
+        textClearPoint.text = "stage" + clearpoint;
 
         // ステージをロード
         RoadStage();
@@ -55,7 +55,22 @@ public class SageInstantiate : MonoBehaviour
             {
                 Instantiate(stageprefab[2]);
             }
-            Debug.Log("ステージ2");
+        }
+
+        if (clearpoint == 3)
+        {
+            for (int count = 0; count < 1; count++)
+            {
+                Instantiate(stageprefab[3]);
+            }
+        }
+
+        if (clearpoint == 4)
+        {
+            for (int count = 0; count < 1; count++)
+            {
+                Instantiate(stageprefab[4]);
+            }
         }
     }
 }
