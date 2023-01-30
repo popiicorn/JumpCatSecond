@@ -72,5 +72,29 @@ public class SageInstantiate : MonoBehaviour
                 Instantiate(stageprefab[4]);
             }
         }
+
+        if (clearpoint == 5)
+        {
+            for (int count = 0; count < 1; count++)
+            {
+                Instantiate(stageprefab[5]);
+            }
+        }
+
+        if (clearpoint == 6)
+        {
+            for (int count = 0; count < 1; count++)
+            {
+                Instantiate(stageprefab[6]);
+            }
+        }
+
+        if (clearpoint == 7)
+        {
+            for (int count = 0; count < 1; count++)
+            {
+                Instantiate(stageprefab[7]);
+            }
+        }
     }
 }
