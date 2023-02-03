@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rigid2D;
     public float jumpForce = 780.0f;
+    public int outLine = -30;
 
 
     void Start()
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
 
         // 画面外に出た場合は最初から
-        if (transform.position.y < -30)
+        if (transform.position.y < outLine)
         {
             SceneManager.LoadScene("Main");
         }
