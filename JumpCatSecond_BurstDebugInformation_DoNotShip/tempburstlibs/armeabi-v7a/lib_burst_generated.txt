@@ -164,7 +164,9 @@ Library: lib_burst_generated
 --root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
 --root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
 --root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll
+--root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.Recorder.dll
 --root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
+--root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.Recorder.Base.dll
 --root-assembly=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
 --assembly-folder=D:\Unity\JumpCatSecond\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
