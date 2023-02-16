@@ -33,6 +33,7 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - Cinemachine
+    - GoogleMobileAds.Editor
     - PsdPlugin
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
