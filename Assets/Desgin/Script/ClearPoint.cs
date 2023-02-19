@@ -9,6 +9,9 @@ public class ClearPoint : MonoBehaviour
     public int clearpoint = 0;
     public Text textClearPoint;
 
+    public GameObject normalButton;
+    public GameObject insteButton;
+
     void Start()
     {
         //ポイント値のロード
@@ -18,10 +21,20 @@ public class ClearPoint : MonoBehaviour
         textClearPoint.text = "" + clearpoint;
 
         Debug.Log("クリアポイントロード");
+
+        ClearButton();
     }
 
 
     public void OnClickStartButton()
+    {
+        //SceneManager.LoadScene("main");
+
+        clearpoint += 1;
+        AddPoint();
+    }
+
+    public void OnClickStartButtonNormal()
     {
         SceneManager.LoadScene("main");
 
@@ -41,5 +54,20 @@ public class ClearPoint : MonoBehaviour
         Debug.Log("クリアポイント獲得");
     }
 
+
+    // 広告ボタン------------------------------------------
+    void ClearButton()
+    {
+        if (clearpoint <= 5)
+        {
+            normalButton.SetActive(true);
+            insteButton.SetActive(false);
+        }
+        else
+        {
+            normalButton.SetActive(false);
+            insteButton.SetActive(true);
+        }
+    }
 
 }
