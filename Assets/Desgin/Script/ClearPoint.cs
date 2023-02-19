@@ -12,6 +12,9 @@ public class ClearPoint : MonoBehaviour
     public GameObject normalButton;
     public GameObject insteButton;
 
+    public GameObject normalTitle;
+    public GameObject lastTitle;
+
     void Start()
     {
         //ポイント値のロード
@@ -23,6 +26,7 @@ public class ClearPoint : MonoBehaviour
         Debug.Log("クリアポイントロード");
 
         ClearButton();
+        ClearTitle();
     }
 
 
@@ -32,6 +36,7 @@ public class ClearPoint : MonoBehaviour
 
         clearpoint += 1;
         AddPoint();
+        LastPoint();
     }
 
     public void OnClickStartButtonNormal()
@@ -40,6 +45,7 @@ public class ClearPoint : MonoBehaviour
 
         clearpoint += 1;
         AddPoint();
+        LastPoint();
     }
 
 
@@ -67,6 +73,37 @@ public class ClearPoint : MonoBehaviour
         {
             normalButton.SetActive(false);
             insteButton.SetActive(true);
+        }
+    }
+
+    //ラストポイント数代入------------------------------------------
+    void LastPoint()
+    {
+        textClearPoint.text = clearpoint + "";
+
+        if (clearpoint == 51)　//最後のステージ数+1を記入(最後のステージが2なら3)
+        {
+            clearpoint = 0;
+        }
+
+        //ポイント値のセーブ
+        ES3.Save<int>("Clearkey", clearpoint);
+
+        Debug.Log("ラストクリアポイント獲得");
+    }
+
+    // クリア画面------------------------------------------
+    void ClearTitle()
+    {
+        if (clearpoint < 50)　//最後のステージ数を記入(最後のステージが2なら2)
+        {
+            normalTitle.SetActive(true);
+            lastTitle.SetActive(false);
+        }
+        else
+        {
+            normalTitle.SetActive(false);
+            lastTitle.SetActive(true);
         }
     }
 
