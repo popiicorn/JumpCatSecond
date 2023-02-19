@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SageInstantiate : MonoBehaviour
+public class StageInstantiate : MonoBehaviour
 {
     public GameObject[] stageprefab;
     public int clearpoint = 0;
@@ -32,7 +32,7 @@ public class SageInstantiate : MonoBehaviour
     // ロードステージ
     void RoadStage()
     {
-        if (clearpoint == clearpoint)
+        if (clearpoint == clearpoint * 1)
         {
             for (int count = 0; count < 1; count++)
             {
@@ -40,4 +40,6 @@ public class SageInstantiate : MonoBehaviour
             }
         }
     }
+
+
 }

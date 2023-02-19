@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 1611653605}
   - component: {fileID: 1611653606}
   m_Layer: 0
-  m_Name: SageInstantiate
+  m_Name: StageInstantiate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
