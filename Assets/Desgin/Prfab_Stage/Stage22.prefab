@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1031ebc2e49b6b84d92bd34e7fe0c49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookTarget: {fileID: 32058492439880304}
+  lookTarget: {fileID: 2441579609866155887}
 --- !u!1 &3402369605057676346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,6 +1742,11 @@ BoxCollider2D:
 --- !u!4 &207268906538363709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3501673878238186442, guid: fab4adf636354a64b9ee3c3daaac9ad4, type: 3}
+  m_PrefabInstance: {fileID: 3636705275258675447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2441579609866155887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1412467366624597912, guid: fab4adf636354a64b9ee3c3daaac9ad4, type: 3}
   m_PrefabInstance: {fileID: 3636705275258675447}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6612905291503061687
