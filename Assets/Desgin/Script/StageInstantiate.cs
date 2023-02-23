@@ -18,7 +18,7 @@ public class StageInstantiate : MonoBehaviour
         clearpoint = ES3.Load("Clearkey", clearpoint);
 
         // メニュー画面表示用
-        textClearPoint.text = "stage" + clearpoint;
+        textClearPoint.text = "stage " + clearpoint + " / 60";
 
         // ステージをロード
         RoadStage();
