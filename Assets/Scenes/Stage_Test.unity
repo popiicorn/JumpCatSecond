@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage45
       objectReference: {fileID: 0}
+    - target: {fileID: 5653301125194147400, guid: a66d96cc424ef4a4ea81c43da128f684, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7415704541814619450, guid: a66d96cc424ef4a4ea81c43da128f684, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -224,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6612905289882405372, guid: bc6b7148bb95c5c43a5a7ba095fcc469, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6612905289882405373, guid: bc6b7148bb95c5c43a5a7ba095fcc469, type: 3}
       propertyPath: m_RootOrder
