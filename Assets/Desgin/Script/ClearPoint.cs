@@ -81,7 +81,7 @@ public class ClearPoint : MonoBehaviour
     {
         textClearPoint.text = clearpoint + "";
 
-        if (clearpoint == 51)　//最後のステージ数+1を記入(最後のステージが2なら3)
+        if (clearpoint == 61)　//最後のステージ数+1を記入(最後のステージが2なら3)
         {
             clearpoint = 0;
         }
@@ -95,7 +95,7 @@ public class ClearPoint : MonoBehaviour
     // クリア画面------------------------------------------
     void ClearTitle()
     {
-        if (clearpoint < 50)　//最後のステージ数を記入(最後のステージが2なら2)
+        if (clearpoint < 60)　//最後のステージ数を記入(最後のステージが2なら2)
         {
             normalTitle.SetActive(true);
             lastTitle.SetActive(false);
