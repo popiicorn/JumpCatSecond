@@ -1,103 +1,103 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using GoogleMobileAds.Api;
 using System;
-using UnityEngine.SceneManagement;//ƒV[ƒ“ˆÚ“®‚É•K—v‚È‚½‚ß’Ç‰Á
+using UnityEngine.SceneManagement;//ã‚·ãƒ¼ãƒ³ç§»å‹•ã«å¿…è¦ãªãŸã‚è¿½åŠ 
 
 public class AdMobInterstitial : MonoBehaviour
 {
-    //‚â‚é‚±‚Æ
-    //1.ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹LID‚Ì“ü—Í
-    //2.ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹‹N“®İ’è@ShowAdMobInterstitial()‚ğg‚¤
+    //ã‚„ã‚‹ã“ã¨
+    //1.ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘ŠIDã®å…¥åŠ›
+    //2.ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èµ·å‹•è¨­å®šã€€ShowAdMobInterstitial()ã‚’ä½¿ã†
 
-    private InterstitialAd interstitial;//InterstitialAdŒ^‚Ì•Ï”interstitial‚ğéŒ¾@‚±‚Ì’†‚ÉƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹L‚Ìî•ñ‚ª“ü‚é
+    private InterstitialAd interstitial;//InterstitialAdå‹ã®å¤‰æ•°interstitialã‚’å®£è¨€ã€€ã“ã®ä¸­ã«ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘Šã®æƒ…å ±ãŒå…¥ã‚‹
 
     private void Start()
     {
         RequestInterstitial();
-        Debug.Log("“Ç‚İ‚İŠJn");
+        Debug.Log("èª­ã¿è¾¼ã¿é–‹å§‹");
     }
 
-    //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹L‚ğ•\¦‚·‚éŠÖ”
-    //ƒ{ƒ^ƒ“‚È‚Ç‚ÉŠ„•t‚¯‚µ‚Äg—p
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘Šã‚’è¡¨ç¤ºã™ã‚‹é–¢æ•°
+    //ãƒœã‚¿ãƒ³ãªã©ã«å‰²ä»˜ã‘ã—ã¦ä½¿ç”¨
     public void ShowAdMobInterstitial()
     {
-        //L‚Ì“Ç‚İ‚İ‚ªŠ®—¹‚µ‚Ä‚¢‚½‚çL•\¦
+        //åºƒå‘Šã®èª­ã¿è¾¼ã¿ãŒå®Œäº†ã—ã¦ã„ãŸã‚‰åºƒå‘Šè¡¨ç¤º
         if (interstitial.IsLoaded() == true)
         {
             interstitial.Show();
-            Debug.Log("L•\¦");
+            Debug.Log("åºƒå‘Šè¡¨ç¤º");
         }
         else
         {
-            Debug.Log("L“Ç‚İ‚İ–¢Š®—¹");
-            //ƒV[ƒ“ˆÚ“®
-            SceneManager.LoadScene("Main");// ©----------------’Ç‰Á
+            Debug.Log("åºƒå‘Šèª­ã¿è¾¼ã¿æœªå®Œäº†");
+            //ã‚·ãƒ¼ãƒ³ç§»å‹•
+            SceneManager.LoadScene("Main");// â†----------------è¿½åŠ 
         }
     }
 
 
 
-    //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹L‚ğ“Ç‚İ‚ŞŠÖ”
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘Šã‚’èª­ã¿è¾¼ã‚€é–¢æ•°
     private void RequestInterstitial()
     {
-        //Android‚ÆiOS‚ÅLID‚ªˆá‚¤‚Ì‚Åƒvƒ‰ƒbƒgƒtƒH[ƒ€‚Åˆ—‚ğ•ª‚¯‚Ü‚·B
-        // Ql
-        //yUnityzAndroid‚ÆiOS‚Åˆ—‚ğ•ª‚¯‚é•û–@
+        //Androidã¨iOSã§åºƒå‘ŠIDãŒé•ã†ã®ã§ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ã§å‡¦ç†ã‚’åˆ†ã‘ã¾ã™ã€‚
+        // å‚è€ƒ
+        //ã€Unityã€‘Androidã¨iOSã§å‡¦ç†ã‚’åˆ†ã‘ã‚‹æ–¹æ³•
         // https://marumaro7.hatenablog.com/entry/platformsyoriwakeru
 
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-6736870106967218/3296000143";//‚±‚±‚ÉAndroid‚ÌƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹LID‚ğ“ü—Í
+        string adUnitId = "ca-app-pub-6736870106967218/3296000143";//ã“ã“ã«Androidã®ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘ŠIDã‚’å…¥åŠ›
 
 #elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-6736870106967218/6452916025";//‚±‚±‚ÉiOS‚ÌƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹LID‚ğ“ü—Í
+        string adUnitId = "ca-app-pub-6736870106967218/6452916025";//ã“ã“ã«iOSã®ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘ŠIDã‚’å…¥åŠ›
 
 #else
         string adUnitId = "unexpected_platform";
 #endif
 
-        //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹L‰Šú‰»
+        //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘ŠåˆæœŸåŒ–
         interstitial = new InterstitialAd(adUnitId);
 
 
-        //InterstitialAdŒ^‚Ì•Ï” interstitial‚ÌŠeíó‘Ô ‚ÉŠÖ”‚ğ“o˜^
-        interstitial.OnAdLoaded += HandleOnAdLoaded;//interstitial‚Ìó‘Ô‚ª@ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹“Ç‚İ‚İŠ®—¹@‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”(ŠÖ”–¼HandleOnAdLoaded)‚ğ“o˜^
-        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;//interstitial‚Ìó‘Ô‚ª@ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹“Ç‚İ‚İ¸”s @‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”(ŠÖ”–¼HandleOnAdFailedToLoad)‚ğ“o˜^
-        interstitial.OnAdClosed += HandleOnAdClosed;//interstitial‚Ìó‘Ô‚ª  ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹•\¦I—¹@‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”(HandleOnAdClosed)‚ğ“o˜^
+        //InterstitialAdå‹ã®å¤‰æ•° interstitialã®å„ç¨®çŠ¶æ…‹ ã«é–¢æ•°ã‚’ç™»éŒ²
+        interstitial.OnAdLoaded += HandleOnAdLoaded;//interstitialã®çŠ¶æ…‹ãŒã€€ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èª­ã¿è¾¼ã¿å®Œäº†ã€€ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°(é–¢æ•°åHandleOnAdLoaded)ã‚’ç™»éŒ²
+        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;//interstitialã®çŠ¶æ…‹ãŒã€€ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èª­ã¿è¾¼ã¿å¤±æ•— ã€€ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°(é–¢æ•°åHandleOnAdFailedToLoad)ã‚’ç™»éŒ²
+        interstitial.OnAdClosed += HandleOnAdClosed;//interstitialã®çŠ¶æ…‹ãŒ  ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«è¡¨ç¤ºçµ‚äº†ã€€ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°(HandleOnAdClosed)ã‚’ç™»éŒ²
 
 
-        //ƒŠƒNƒGƒXƒg‚ğ¶¬
+        //ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ç”Ÿæˆ
         AdRequest request = new AdRequest.Builder().Build();
-        //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹‚ÉƒŠƒNƒGƒXƒg‚ğƒ[ƒh
+        //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«ã«ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ãƒ­ãƒ¼ãƒ‰
         interstitial.LoadAd(request);
     }
 
-    //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹“Ç‚İ‚İŠ®—¹ ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èª­ã¿è¾¼ã¿å®Œäº† ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        Debug.Log("ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹“Ç‚İ‚İŠ®—¹");
+        Debug.Log("ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èª­ã¿è¾¼ã¿å®Œäº†");
     }
 
-    //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹“Ç‚İ‚İ¸”s ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èª­ã¿è¾¼ã¿å¤±æ•— ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        Debug.Log("ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹“Ç‚İ‚İ¸”s" + args.LoadAdError);//args.LoadAdError:ƒGƒ‰[“à—e 
+        Debug.Log("ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«èª­ã¿è¾¼ã¿å¤±æ•—" + args.LoadAdError);//args.LoadAdError:ã‚¨ãƒ©ãƒ¼å†…å®¹ 
     }
 
 
-    //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹•\¦I—¹ ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«è¡¨ç¤ºçµ‚äº† ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
-        Debug.Log("ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹LI—¹");
+        Debug.Log("ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘Šçµ‚äº†");
 
-        //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹L‚Íg‚¢Ì‚Ä‚È‚Ì‚Åˆê’U”jŠü
+        //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«åºƒå‘Šã¯ä½¿ã„æ¨ã¦ãªã®ã§ä¸€æ—¦ç ´æ£„
         interstitial.Destroy();
 
-        //ƒCƒ“ƒ^[ƒXƒeƒBƒVƒƒƒ‹Ä“Ç‚İ‚İŠJn
+        //ã‚¤ãƒ³ã‚¿ãƒ¼ã‚¹ãƒ†ã‚£ã‚·ãƒ£ãƒ«å†èª­ã¿è¾¼ã¿é–‹å§‹
         RequestInterstitial();
-        Debug.Log("LÄ“Ç‚İ‚İ");
+        Debug.Log("åºƒå‘Šå†èª­ã¿è¾¼ã¿");
 
-        //ƒV[ƒ“ˆÚ“®
-        SceneManager.LoadScene("Main");//  ©----------------’Ç‰Á
+        //ã‚·ãƒ¼ãƒ³ç§»å‹•
+        SceneManager.LoadScene("Main");//  â†----------------è¿½åŠ 
     }
 
 }

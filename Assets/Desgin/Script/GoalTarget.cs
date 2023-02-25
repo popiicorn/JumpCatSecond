@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 public class GoalTarget : MonoBehaviour
@@ -11,9 +11,9 @@ public class GoalTarget : MonoBehaviour
 
 
         {
-            // ‘ÎÛ•¨‚Ö‚ÌƒxƒNƒgƒ‹‚ğZo
+            // å¯¾è±¡ç‰©ã¸ã®ãƒ™ã‚¯ãƒˆãƒ«ã‚’ç®—å‡º
             Vector3 toDirection = lookTarget.transform.position - transform.position;
-            // ‘ÎÛ•¨‚Ö‰ñ“]‚·‚é
+            // å¯¾è±¡ç‰©ã¸å›è»¢ã™ã‚‹
             transform.rotation = Quaternion.LookRotation(toDirection, Vector3.forward);
         }
     }

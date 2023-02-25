@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,22 +14,22 @@ public class StageInstantiate : MonoBehaviour
     void Start()
     {
 
-        //ƒ|ƒCƒ“ƒg’l‚Ìƒ[ƒh
+        //ãƒã‚¤ãƒ³ãƒˆå€¤ã®ãƒ­ãƒ¼ãƒ‰
         clearpoint = ES3.Load("Clearkey", clearpoint);
 
-        // ƒƒjƒ…[‰æ–Ê•\¦—p
+        // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”»é¢è¡¨ç¤ºç”¨
         textClearPoint.text = "stage " + clearpoint + " / 60";
 
-        // ƒXƒe[ƒW‚ğƒ[ƒh
+        // ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ãƒ­ãƒ¼ãƒ‰
         RoadStage();
 
-        Debug.Log("ƒNƒŠƒAƒ|ƒCƒ“ƒgƒ[ƒh");
+        Debug.Log("ã‚¯ãƒªã‚¢ãƒã‚¤ãƒ³ãƒˆãƒ­ãƒ¼ãƒ‰");
     }
 
 
 
 
-    // ƒ[ƒhƒXƒe[ƒW
+    // ãƒ­ãƒ¼ãƒ‰ã‚¹ãƒ†ãƒ¼ã‚¸
     void RoadStage()
     {
         if (clearpoint == clearpoint * 1)

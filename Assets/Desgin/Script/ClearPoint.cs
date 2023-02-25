@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,13 +17,13 @@ public class ClearPoint : MonoBehaviour
 
     void Start()
     {
-        //ƒ|ƒCƒ“ƒg’l‚Ìƒ[ƒh
+        //ãƒã‚¤ãƒ³ãƒˆå€¤ã®ãƒ­ãƒ¼ãƒ‰
         clearpoint = ES3.Load("Clearkey", clearpoint);
 
-        // ƒƒjƒ…[‰æ–Ê•\¦—p
+        // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”»é¢è¡¨ç¤ºç”¨
         textClearPoint.text = "" + clearpoint;
 
-        Debug.Log("ƒNƒŠƒAƒ|ƒCƒ“ƒgƒ[ƒh");
+        Debug.Log("ã‚¯ãƒªã‚¢ãƒã‚¤ãƒ³ãƒˆãƒ­ãƒ¼ãƒ‰");
 
         ClearButton();
         ClearTitle();
@@ -49,19 +49,19 @@ public class ClearPoint : MonoBehaviour
     }
 
 
-    //ƒ|ƒCƒ“ƒg”‘ã“ü------------------------------------------
+    //ãƒã‚¤ãƒ³ãƒˆæ•°ä»£å…¥------------------------------------------
     void AddPoint()
     {
         textClearPoint.text = clearpoint + "";
 
-        //ƒ|ƒCƒ“ƒg’l‚ÌƒZ[ƒu
+        //ãƒã‚¤ãƒ³ãƒˆå€¤ã®ã‚»ãƒ¼ãƒ–
         ES3.Save<int>("Clearkey", clearpoint);
 
-        Debug.Log("ƒNƒŠƒAƒ|ƒCƒ“ƒgŠl“¾");
+        Debug.Log("ã‚¯ãƒªã‚¢ãƒã‚¤ãƒ³ãƒˆç²å¾—");
     }
 
 
-    // Lƒ{ƒ^ƒ“------------------------------------------
+    // åºƒå‘Šãƒœã‚¿ãƒ³------------------------------------------
     void ClearButton()
     {
         if (clearpoint <= 5)
@@ -76,26 +76,26 @@ public class ClearPoint : MonoBehaviour
         }
     }
 
-    //ƒ‰ƒXƒgƒ|ƒCƒ“ƒg”‘ã“ü------------------------------------------
+    //ãƒ©ã‚¹ãƒˆãƒã‚¤ãƒ³ãƒˆæ•°ä»£å…¥------------------------------------------
     void LastPoint()
     {
         textClearPoint.text = clearpoint + "";
 
-        if (clearpoint == 61)@//ÅŒã‚ÌƒXƒe[ƒW”+1‚ğ‹L“ü(ÅŒã‚ÌƒXƒe[ƒW‚ª2‚È‚ç3)
+        if (clearpoint == 61)ã€€//æœ€å¾Œã®ã‚¹ãƒ†ãƒ¼ã‚¸æ•°+1ã‚’è¨˜å…¥(æœ€å¾Œã®ã‚¹ãƒ†ãƒ¼ã‚¸ãŒ2ãªã‚‰3)
         {
             clearpoint = 0;
         }
 
-        //ƒ|ƒCƒ“ƒg’l‚ÌƒZ[ƒu
+        //ãƒã‚¤ãƒ³ãƒˆå€¤ã®ã‚»ãƒ¼ãƒ–
         ES3.Save<int>("Clearkey", clearpoint);
 
-        Debug.Log("ƒ‰ƒXƒgƒNƒŠƒAƒ|ƒCƒ“ƒgŠl“¾");
+        Debug.Log("ãƒ©ã‚¹ãƒˆã‚¯ãƒªã‚¢ãƒã‚¤ãƒ³ãƒˆç²å¾—");
     }
 
-    // ƒNƒŠƒA‰æ–Ê------------------------------------------
+    // ã‚¯ãƒªã‚¢ç”»é¢------------------------------------------
     void ClearTitle()
     {
-        if (clearpoint < 60)@//ÅŒã‚ÌƒXƒe[ƒW”‚ğ‹L“ü(ÅŒã‚ÌƒXƒe[ƒW‚ª2‚È‚ç2)
+        if (clearpoint < 60)ã€€//æœ€å¾Œã®ã‚¹ãƒ†ãƒ¼ã‚¸æ•°ã‚’è¨˜å…¥(æœ€å¾Œã®ã‚¹ãƒ†ãƒ¼ã‚¸ãŒ2ãªã‚‰2)
         {
             normalTitle.SetActive(true);
             lastTitle.SetActive(false);

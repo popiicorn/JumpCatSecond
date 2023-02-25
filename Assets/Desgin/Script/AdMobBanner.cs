@@ -1,99 +1,99 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System;
 using GoogleMobileAds.Api;
 
 public class AdMobBanner : MonoBehaviour
 {
-    //‚â‚é‚±‚Æ
-    //1.ƒoƒi[LID‚ğ“ü—Í
-    //2.ƒoƒi[‚Ì•\¦ˆÊ’u@(Œ»ó•\¦ˆÊ’u‚Í‰º‚É‚È‚Á‚Ä‚¢‚Ü‚·B)
-    //3.ƒoƒi[•\¦‚Ìƒ^ƒCƒ~ƒ“ƒO (Œ»ó ‹N“®’¼Œã‚É‚È‚Á‚Ä‚¢‚Ü‚·B)
+    //ã‚„ã‚‹ã“ã¨
+    //1.ãƒãƒŠãƒ¼åºƒå‘ŠIDã‚’å…¥åŠ›
+    //2.ãƒãƒŠãƒ¼ã®è¡¨ç¤ºä½ç½®ã€€(ç¾çŠ¶è¡¨ç¤ºä½ç½®ã¯ä¸‹ã«ãªã£ã¦ã„ã¾ã™ã€‚)
+    //3.ãƒãƒŠãƒ¼è¡¨ç¤ºã®ã‚¿ã‚¤ãƒŸãƒ³ã‚° (ç¾çŠ¶ èµ·å‹•ç›´å¾Œã«ãªã£ã¦ã„ã¾ã™ã€‚)
 
-    private BannerView bannerView;//BannerViewŒ^‚Ì•Ï”bannerView‚ğéŒ¾@‚±‚Ì’†‚Éƒoƒi[L‚Ìî•ñ‚ª“ü‚é
+    private BannerView bannerView;//BannerViewå‹ã®å¤‰æ•°bannerViewã‚’å®£è¨€ã€€ã“ã®ä¸­ã«ãƒãƒŠãƒ¼åºƒå‘Šã®æƒ…å ±ãŒå…¥ã‚‹
 
 
-    //ƒV[ƒ““Ç‚İ‚İ‚©‚çƒoƒi[‚ğ•\¦‚·‚é
-    //Å‰‚©‚çƒoƒi[‚ğ•\¦‚µ‚½‚­‚È‚¢ê‡‚Í‚±‚ÌŠÖ”‚ğÁ‚µ‚Ä‚­‚¾‚³‚¢B
+    //ã‚·ãƒ¼ãƒ³èª­ã¿è¾¼ã¿æ™‚ã‹ã‚‰ãƒãƒŠãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹
+    //æœ€åˆã‹ã‚‰ãƒãƒŠãƒ¼ã‚’è¡¨ç¤ºã—ãŸããªã„å ´åˆã¯ã“ã®é–¢æ•°ã‚’æ¶ˆã—ã¦ãã ã•ã„ã€‚
     private void Start()
     {
-        RequestBanner();//ƒAƒ_ƒvƒeƒBƒuƒoƒi[‚ğ•\¦‚·‚éŠÖ” ŒÄ‚Ño‚µ
+        RequestBanner();//ã‚¢ãƒ€ãƒ—ãƒ†ã‚£ãƒ–ãƒãƒŠãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹é–¢æ•° å‘¼ã³å‡ºã—
     }
 
 
-    //ƒ{ƒ^ƒ““™‚ÉŠ„‚è•t‚¯‚Äg—p
-    //ƒoƒi[‚ğ•\¦‚·‚éŠÖ”
+    //ãƒœã‚¿ãƒ³ç­‰ã«å‰²ã‚Šä»˜ã‘ã¦ä½¿ç”¨
+    //ãƒãƒŠãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹é–¢æ•°
     public void BannerStart()
     {
-        RequestBanner();//ƒAƒ_ƒvƒeƒBƒuƒoƒi[‚ğ•\¦‚·‚éŠÖ” ŒÄ‚Ño‚µ       
+        RequestBanner();//ã‚¢ãƒ€ãƒ—ãƒ†ã‚£ãƒ–ãƒãƒŠãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹é–¢æ•° å‘¼ã³å‡ºã—       
     }
 
-    //ƒ{ƒ^ƒ““™‚ÉŠ„‚è•t‚¯‚Äg—p
-    //ƒoƒi[‚ğíœ‚·‚éŠÖ”
+    //ãƒœã‚¿ãƒ³ç­‰ã«å‰²ã‚Šä»˜ã‘ã¦ä½¿ç”¨
+    //ãƒãƒŠãƒ¼ã‚’å‰Šé™¤ã™ã‚‹é–¢æ•°
     public void BannerDestroy()
     {
-        bannerView.Destroy();//ƒoƒi[íœ
+        bannerView.Destroy();//ãƒãƒŠãƒ¼å‰Šé™¤
     }
 
-    //ƒAƒ_ƒvƒeƒBƒuƒoƒi[‚ğ•\¦‚·‚éŠÖ”
+    //ã‚¢ãƒ€ãƒ—ãƒ†ã‚£ãƒ–ãƒãƒŠãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹é–¢æ•°
     private void RequestBanner()
     {
-        //Android‚ÆiOS‚ÅLID‚ªˆá‚¤‚Ì‚Åƒvƒ‰ƒbƒgƒtƒH[ƒ€‚Åˆ—‚ğ•ª‚¯‚Ü‚·B
-        // Ql
-        //yUnityzAndroid‚ÆiOS‚Åˆ—‚ğ•ª‚¯‚é•û–@
+        //Androidã¨iOSã§åºƒå‘ŠIDãŒé•ã†ã®ã§ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ã§å‡¦ç†ã‚’åˆ†ã‘ã¾ã™ã€‚
+        // å‚è€ƒ
+        //ã€Unityã€‘Androidã¨iOSã§å‡¦ç†ã‚’åˆ†ã‘ã‚‹æ–¹æ³•
         // https://marumaro7.hatenablog.com/entry/platformsyoriwakeru
 
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-6736870106967218/4609081814";//‚±‚±‚ÉAndroid‚Ìƒoƒi[ID‚ğ“ü—Í
+        string adUnitId = "ca-app-pub-6736870106967218/4609081814";//ã“ã“ã«Androidã®ãƒãƒŠãƒ¼IDã‚’å…¥åŠ›
 
 #elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-6736870106967218/7765997695";//‚±‚±‚ÉiOS‚Ìƒoƒi[ID‚ğ“ü—Í
+        string adUnitId = "ca-app-pub-6736870106967218/7765997695";//ã“ã“ã«iOSã®ãƒãƒŠãƒ¼IDã‚’å…¥åŠ›
 
 #else
         string adUnitId = "unexpected_platform";
 #endif
 
-        // V‚µ‚¢L‚ğ•\¦‚·‚é‘O‚Éƒoƒi[‚ğíœ
-        if (bannerView != null)//‚à‚µ•Ï”bannerView‚Ì’†‚Éƒoƒi[‚Ìî•ñ‚ª“ü‚Á‚Ä‚¢‚½‚ç
+        // æ–°ã—ã„åºƒå‘Šã‚’è¡¨ç¤ºã™ã‚‹å‰ã«ãƒãƒŠãƒ¼ã‚’å‰Šé™¤
+        if (bannerView != null)//ã‚‚ã—å¤‰æ•°bannerViewã®ä¸­ã«ãƒãƒŠãƒ¼ã®æƒ…å ±ãŒå…¥ã£ã¦ã„ãŸã‚‰
         {
-            bannerView.Destroy();//ƒoƒi[íœ
+            bannerView.Destroy();//ãƒãƒŠãƒ¼å‰Šé™¤
         }
 
-        //Œ»İ‚Ì‰æ–Ê‚ÌŒü‚«‰¡•‚ğæ“¾‚µƒoƒi[ƒTƒCƒY‚ğŒˆ’è
+        //ç¾åœ¨ã®ç”»é¢ã®å‘ãæ¨ªå¹…ã‚’å–å¾—ã—ãƒãƒŠãƒ¼ã‚µã‚¤ã‚ºã‚’æ±ºå®š
         AdSize adaptiveSize =
                 AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
 
 
-        //ƒoƒi[‚ğ¶¬ new BannerView(ƒoƒi[ID,ƒoƒi[ƒTƒCƒY,ƒoƒi[•\¦ˆÊ’u)
-        bannerView = new BannerView(adUnitId, adaptiveSize, AdPosition.Top);//ƒoƒi[•\¦ˆÊ’u‚Í
-                                                                               //‰æ–Êã‚É•\¦‚·‚éê‡FAdPosition.Top
-                                                                               //‰æ–Ê‰º‚É•\¦‚·‚éê‡FAdPosition.Bottom
+        //ãƒãƒŠãƒ¼ã‚’ç”Ÿæˆ new BannerView(ãƒãƒŠãƒ¼ID,ãƒãƒŠãƒ¼ã‚µã‚¤ã‚º,ãƒãƒŠãƒ¼è¡¨ç¤ºä½ç½®)
+        bannerView = new BannerView(adUnitId, adaptiveSize, AdPosition.Top);//ãƒãƒŠãƒ¼è¡¨ç¤ºä½ç½®ã¯
+                                                                               //ç”»é¢ä¸Šã«è¡¨ç¤ºã™ã‚‹å ´åˆï¼šAdPosition.Top
+                                                                               //ç”»é¢ä¸‹ã«è¡¨ç¤ºã™ã‚‹å ´åˆï¼šAdPosition.Bottom
 
 
-        //BannerViewŒ^‚Ì•Ï” bannerView‚ÌŠeíó‘Ô ‚ÉŠÖ”‚ğ“o˜^
-        bannerView.OnAdLoaded += HandleAdLoaded;//bannerView‚Ìó‘Ô‚ª ƒoƒi[•\¦Š®—¹ ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”(ŠÖ”–¼HandleAdLoaded)‚ğ“o˜^
-        bannerView.OnAdFailedToLoad += HandleAdFailedToLoad;//bannerView‚Ìó‘Ô‚ª ƒoƒi[“Ç‚İ‚İ¸”s ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”(ŠÖ”–¼HandleAdFailedToLoad)‚ğ“o˜^
+        //BannerViewå‹ã®å¤‰æ•° bannerViewã®å„ç¨®çŠ¶æ…‹ ã«é–¢æ•°ã‚’ç™»éŒ²
+        bannerView.OnAdLoaded += HandleAdLoaded;//bannerViewã®çŠ¶æ…‹ãŒ ãƒãƒŠãƒ¼è¡¨ç¤ºå®Œäº† ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°(é–¢æ•°åHandleAdLoaded)ã‚’ç™»éŒ²
+        bannerView.OnAdFailedToLoad += HandleAdFailedToLoad;//bannerViewã®çŠ¶æ…‹ãŒ ãƒãƒŠãƒ¼èª­ã¿è¾¼ã¿å¤±æ•— ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°(é–¢æ•°åHandleAdFailedToLoad)ã‚’ç™»éŒ²
 
 
-        //ƒŠƒNƒGƒXƒg‚ğ¶¬
+        //ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ç”Ÿæˆ
         AdRequest adRequest = new AdRequest.Builder().Build();
 
-        //L•\¦
+        //åºƒå‘Šè¡¨ç¤º
         bannerView.LoadAd(adRequest);
     }
 
 
     #region Banner callback handlers
 
-    //ƒoƒi[•\¦Š®—¹ ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”
+    //ãƒãƒŠãƒ¼è¡¨ç¤ºå®Œäº† ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°
     public void HandleAdLoaded(object sender, EventArgs args)
     {
-        Debug.Log("ƒoƒi[•\¦Š®—¹");
+        Debug.Log("ãƒãƒŠãƒ¼è¡¨ç¤ºå®Œäº†");
     }
 
-    //ƒoƒi[“Ç‚İ‚İ¸”s ‚Æ‚È‚Á‚½‚É‹N“®‚·‚éŠÖ”
+    //ãƒãƒŠãƒ¼èª­ã¿è¾¼ã¿å¤±æ•— ã¨ãªã£ãŸæ™‚ã«èµ·å‹•ã™ã‚‹é–¢æ•°
     public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        Debug.Log("ƒoƒi[“Ç‚İ‚İ¸”s" + args.LoadAdError);//args.LoadAdError:ƒGƒ‰[“à—e 
+        Debug.Log("ãƒãƒŠãƒ¼èª­ã¿è¾¼ã¿å¤±æ•—" + args.LoadAdError);//args.LoadAdError:ã‚¨ãƒ©ãƒ¼å†…å®¹ 
     }
 
     #endregion
